@@ -1,5 +1,5 @@
 # lyp_homework-cli
-存放用于step01的homework-cli, 以下是homework具体内容：
+//// 用于存放step01的homework-cli, 以下是homework具体内容：
 
 1.找到在 Ubuntu 系统中可以用于计算文件内容 MD5 值的命令
 answer：
