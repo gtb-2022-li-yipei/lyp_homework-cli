@@ -11,3 +11,29 @@ answer：
    2）comm file1 file2            //逐行比较，输出两文件相同的行
    3）diff                        //逐行比较，输出差异行
    4）uniq                        //报告或省略重复的行
+
+3.实现一个名为 odd-or-even 的 Bash function，可以用来判断给其提供的第一个参数是奇数还是偶数，奇数时输出 odd，偶数时输出 even
+
+function odd-or-even2(){
+  n=$1
+  n1=$(echo $n | grep -c "[^0-9]")
+  if [$n1 -eq 1]
+  then
+       echo "你输入的不是数字！"
+       exit 1
+  fi
+
+  n2=$[$n%2]
+  if [$n2 -eq 0]
+  then
+       echo even
+  else
+       echo odd
+  fi
+
+}
+
+4.实现一个名为 next 的脚本，当在 CLI 里执行 $ next （$为提示符，不需要输入）时就返回一个整数，第一次返回 1，每执行一次加 1
+
+5.一个文件含有 N 行内容，每行的内容都是一个大于等于 0 的整数，无任何空行或其它内容，使用 one-liner 的形式对该文件中的数字求和
+
