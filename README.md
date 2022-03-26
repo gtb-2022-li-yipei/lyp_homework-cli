@@ -37,3 +37,5 @@ function odd-or-even2(){
 
 5.一个文件含有 N 行内容，每行的内容都是一个大于等于 0 的整数，无任何空行或其它内容，使用 one-liner 的形式对该文件中的数字求和
 
+6.top10
+![image](https://user-images.githubusercontent.com/101808060/160234159-de071388-a6d7-46f9-91df-8def63308daf.png)
