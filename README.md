@@ -39,3 +39,23 @@ function odd-or-even2(){
 
 6.top10
 ![image](https://user-images.githubusercontent.com/101808060/160234159-de071388-a6d7-46f9-91df-8def63308daf.png)
+
+#homework01
+#!/bin/bash
+
+declare -r INPUT_FILE="${1:?input file is required!}"
+
+cat "${INPUT_FILE}" | sed -E 's/ +\| +/\n/g' \
+                    | sed -E 's/^ +//' \
+                    | sed -E 's/^(sudo|nohup) //' \
+                    | cut -d' ' -f1 \
+                    | sed -E 's/^.*\///' \
+                    | grep -E -v '^(ll|ls|cd|cat|vim|echo)$' \
+                    | awk '{total++; cmds[$1++];} END{for (cmd in cmds) {printf "%d %f %s\n",cmds[cmd], cmds[cmd]/total/100, cmd;}}'\
+                    | sort -t' ' -k1,1nr -k3,3 \
+                    | head -n10 \
+                    | awk '{printf "%4d %6.2f%%  %s\n", $1, $2, $3;}'
+
+
+![image](https://user-images.githubusercontent.com/101808060/160239466-ff1caa5c-8c68-4123-ad50-4caf677697b9.png)
+
